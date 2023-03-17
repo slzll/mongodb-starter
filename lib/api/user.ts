@@ -67,9 +67,10 @@ export async function getFirstUser(): Promise<UserProps | null> {
       projection: { _id: 0, emailVerified: 0 }
     }
   );
+  console.log(results);
   return {
     ...results,
-    bioMdx: await getMdxSource(results.bio || placeholderBio)
+    bioMdx: await getMdxSource(results?.bio || placeholderBio)
   };
 }
 
