@@ -51,7 +51,7 @@ export async function getUser(username: string): Promise<UserProps | null> {
   if (results) {
     return {
       ...results,
-      bioMdx: await getMdxSource(results.bio || placeholderBio)
+      bioMdx: await getMdxSource(results?.bio || placeholderBio)
     };
   } else {
     return null;
